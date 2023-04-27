@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-top: 50px;
+  }
+  
+  #word, #letters {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+  }
+  
+  #letters button {
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  #message {
+    margin-top: 20px;
+  }
+  
