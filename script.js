@@ -3,7 +3,7 @@ const words = ['hangman', 'javascript', 'html', 'css', 'programming'];
 
 // Select a random word from the list
 let word = words[Math.floor(Math.random() * words.length)];
-
+console.log(word);
 // Initialize array to hold the letters of the word
 let wordLetters = [];
 
@@ -30,7 +30,7 @@ for (let i = 65; i <= 90; i++) {
         // Disable the button after it is clicked
         this.disabled = true;
         // Check if the letter is in the word
-        if (wordLetters.includes(letter)) {
+        if (wordLetters.includes(letter.toLowerCase())) {
             // Add the letter to the correct letters array
             correctLetters.push(letter);
             // Update the word display
@@ -55,7 +55,7 @@ for (let i = 65; i <= 90; i++) {
 function updateWord() {
     let displayWord = '';
     for (let i = 0; i < word.length; i++) {
-        if (correctLetters.includes(word.charAt(i))) {
+        if (correctLetters.includes((word.charAt(i)).toUpperCase())) {
             displayWord += word.charAt(i) + ' ';
         } else {
             displayWord += '_ ';
@@ -67,12 +67,22 @@ function updateWord() {
 // Function to update the hangman image
 function updateHangman() {
     let image = document.getElementById('hangman');
-    image.src = 'images/hangman' + incorrectGuesses + '.png';
+    if (incorrectGuesses >= 12) {
+        checkLose();
+    } else {
+        image.src = 'images/hangman' + incorrectGuesses + '.jpg';
+    }
 }
 
 // Function to check if the player has won
 function checkWin() {
     if (correctLetters.length === wordLetters.length) {
         document.getElementById('message').innerHTML = 'Congratulations, you won!';
+    }
+}
+
+function checkLose() {
+    if (correctLetters.length > wordLetters.length) {
+        document.getElementById('message').innerHTML = 'You hang yourself!';
     }
 }
