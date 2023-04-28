@@ -7,19 +7,65 @@ body {
     margin-top: 50px;
   }
   
-  #word, #letters {
-    display: inline-block;
+  #letters {
+    display: block;
     margin: 10px;
     padding: 10px;
     border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  #word {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 auto;
+    width: 20%;
   }
   
   #letters button {
     margin: 5px;
     padding: 5px;
+    border-radius: 1px;
+    border: 2px solid black;
+    font-size: 16px;
   }
   
   #message {
     margin-top: 20px;
+    display: none;
+    padding: 10px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(225, 225, 225);
+  }
+
+  #hangman {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+  }
+
+  #restart {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 10%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.525);
+  }
+
+  #restart:hover {
+    background-color: rgb(225, 225, 225);
+  }
+
+  #restart:active {
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.525);
   }
   
